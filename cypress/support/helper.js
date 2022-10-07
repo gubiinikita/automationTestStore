@@ -16,5 +16,6 @@ export function searchExistingProductPageByPage(productName){
             cy.get('.pagination li a').contains('>').click();
             searchExistingProductPageByPage(productName);
         }
-    })    
+    })
+    
 }
