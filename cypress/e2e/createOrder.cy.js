@@ -1,6 +1,6 @@
 ///<reference types = "cypress"/>
 import user from '../fixtures/user.json'
-import {searchExistingProduct} from '../support/helper'
+import {searchExistingProduct, searchExistingProductPageByPage} from '../support/helper'
 
 
 it.skip('Place order', () => {
@@ -19,9 +19,9 @@ it.skip('Place order', () => {
 
     cy.get('h1.heading1').should('contain', 'Your Order Has Been Processed');
     cy.get('.contentpanel').should('contain', 'Thank you for shopping with us!');
-})
+});
 
-it('Place order via search', () => {
+it.skip('Place order via search', () => {
     cy.setCookie("AC_SF_8CEFDA09D5", user.AC_SF_8CEFDA09D5);
 
     cy.visit('/');
@@ -38,4 +38,12 @@ it('Place order via search', () => {
 
     cy.get('h1.heading1').should('contain', 'Your Order Has Been Processed');
     cy.get('.contentpanel').should('contain', 'Thank you for shopping with us!');
-})
+});
+
+it('Place order via search', () => {
+    cy.setCookie("AC_SF_8CEFDA09D5", user.AC_SF_8CEFDA09D5);
+
+    cy.visit('/');
+    searchExistingProduct('I');
+    searchExistingProductPageByPage('Fiorella Purple Peep Toes')
+});
