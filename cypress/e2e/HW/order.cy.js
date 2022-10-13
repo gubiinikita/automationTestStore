@@ -7,7 +7,7 @@ it('Place order via search page by page', () => {
 
     cy.visit('/');
     searchExistingProduct('I');
-    searchExistingProductPageByPage('Fiorella Purple Peep Toes')
+    searchExistingProductPageByPage('Absolute Anti-Age Spot Replenishing Unifying TreatmentSPF 15')
 
     cy.get('#product_quantity').clear().type('4');
     cy.get('.productpagecart').click();
