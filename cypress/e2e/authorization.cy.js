@@ -21,8 +21,10 @@ it('Test inheritance', () => {
 
 it('Authorization errors', () => {
   authorizationPage.visit();
-
-  authorizationPage.checkErrorMessage('!./\%|', user.password)
-  authorizationPage.checkErrorMessage(user.userName, 'hehe')
-  authorizationPage.checkErrorMessage('hehe', user.password)
+  authorizationPage.submitLoginForm('!./\%|', user.password);
+  authorizationPage.checkErrorMessage();
+  authorizationPage.submitLoginForm(user.userName, 'hehe');
+  authorizationPage.checkErrorMessage();
+  authorizationPage.submitLoginForm('hehe', user.password);
+  authorizationPage.checkErrorMessage();
 })

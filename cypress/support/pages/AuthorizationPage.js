@@ -30,21 +30,14 @@ class AuthorizationPage extends BasePage{
 
     submitLoginForm(userName, password){
         cy.log(`Fill login form`);
-        this.getLoginField().type(userName);
-        this.getPasswordField().type(password);
-
-        cy.log(`Click login button`);
-        this.getLoginButton().click();
-    }
-
-    checkErrorMessage(userName, password){
-        cy.log('Fill login form')
         this.getLoginField().clear().type(userName);
         this.getPasswordField().clear().type(password);
 
         cy.log(`Click login button`);
         this.getLoginButton().click();
+    }
 
+    checkErrorMessage(){
         cy.log('Check error message')
         cy.get('[class*="alert-error"]').should('contain', "Error: Incorrect login or password provided.")
         cy.get('[data-dismiss="alert"]').click()
