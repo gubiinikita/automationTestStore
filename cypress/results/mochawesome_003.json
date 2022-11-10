@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-10T17:53:47.379Z",
+    "end": "2022-11-10T17:54:00.017Z",
+    "duration": 12638,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5d1f3b90-3ee1-4801-a53b-e3be961bd0b8",
+      "title": "",
+      "fullFile": "cypress\\e2e\\authorization.cy.js",
+      "file": "cypress\\e2e\\authorization.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Authorization",
+          "fullTitle": "Authorization",
+          "timedOut": null,
+          "duration": 4924,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.submitLoginForm(_user.default.userName, _user.default.password);\n_AccountPage.default.getUserNameFromHeading().should('contain', _user.default.firstName).and('contain', \"My Account\");\ncy.getCookie('AC_SF_8CEFDA09D5').should('exist');",
+          "err": {},
+          "uuid": "9e27bb51-3414-40fc-91ef-660242bd9cec",
+          "parentUUID": "5d1f3b90-3ee1-4801-a53b-e3be961bd0b8",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Test inheritance",
+          "fullTitle": "Test inheritance",
+          "timedOut": null,
+          "duration": 2281,
+          "state": "passed",
+          "speed": "fast",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.performSearch('i');",
+          "err": {},
+          "uuid": "5796adcd-28ff-4188-ab17-e0ca514c097a",
+          "parentUUID": "5d1f3b90-3ee1-4801-a53b-e3be961bd0b8",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Authorization errors",
+          "fullTitle": "Authorization errors",
+          "timedOut": null,
+          "duration": 5318,
+          "state": "passed",
+          "speed": "medium",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "_AuthorizationPage.default.visit();\n_AuthorizationPage.default.submitLoginForm('!./\\%|', _user.default.password);\n_AuthorizationPage.default.checkErrorMessage();\n_AuthorizationPage.default.submitLoginForm(_user.default.userName, 'hehe');\n_AuthorizationPage.default.checkErrorMessage();\n_AuthorizationPage.default.submitLoginForm('hehe', _user.default.password);\n_AuthorizationPage.default.checkErrorMessage();",
+          "err": {},
+          "uuid": "891fe9f6-5a7a-498a-a632-c319256719c4",
+          "parentUUID": "5d1f3b90-3ee1-4801-a53b-e3be961bd0b8",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "9e27bb51-3414-40fc-91ef-660242bd9cec",
+        "5796adcd-28ff-4188-ab17-e0ca514c097a",
+        "891fe9f6-5a7a-498a-a632-c319256719c4"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 12523,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "configFile": "reporter-config.json",
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
