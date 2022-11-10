@@ -1,0 +1,125 @@
+{
+  "stats": {
+    "suites": 0,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-11-08T18:06:10.027Z",
+    "end": "2022-11-08T18:06:53.731Z",
+    "duration": 43704,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "6e80b077-c1da-490d-9e6b-846b360611f6",
+      "title": "",
+      "fullFile": "cypress\\e2e\\createOrder.cy.js",
+      "file": "cypress\\e2e\\createOrder.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [
+        {
+          "title": "Place order",
+          "fullTitle": "Place order",
+          "timedOut": null,
+          "duration": 11839,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/index.php?rt=product/product&product_id=52');\n_OrderCreation.default.createOrder();",
+          "err": {},
+          "uuid": "6007466e-f250-4f86-9f93-d78e12edb256",
+          "parentUUID": "6e80b077-c1da-490d-9e6b-846b360611f6",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Place order via search",
+          "fullTitle": "Place order via search",
+          "timedOut": null,
+          "duration": 10680,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\n(0, _helper.searchExistingProduct)('Benefit Bella Bamba');\n_OrderCreation.default.createOrder();",
+          "err": {},
+          "uuid": "5d01fa5b-9861-4c66-9a9c-7c84f147a15b",
+          "parentUUID": "6e80b077-c1da-490d-9e6b-846b360611f6",
+          "isHook": false,
+          "skipped": false
+        },
+        {
+          "title": "Place order via search page by page",
+          "fullTitle": "Place order via search page by page",
+          "timedOut": null,
+          "duration": 20775,
+          "state": "passed",
+          "speed": "slow",
+          "pass": true,
+          "fail": false,
+          "pending": false,
+          "context": null,
+          "code": "cy.visit('/');\n(0, _helper.searchExistingProduct)('I');\n(0, _helper.searchExistingProductPageByPage)('Fiorella Purple Peep Toes');\n_OrderCreation.default.createOrder();",
+          "err": {},
+          "uuid": "1f1fa969-9ef3-47c4-8365-505db4738a45",
+          "parentUUID": "6e80b077-c1da-490d-9e6b-846b360611f6",
+          "isHook": false,
+          "skipped": false
+        }
+      ],
+      "suites": [],
+      "passes": [
+        "6007466e-f250-4f86-9f93-d78e12edb256",
+        "5d01fa5b-9861-4c66-9a9c-7c84f147a15b",
+        "1f1fa969-9ef3-47c4-8365-505db4738a45"
+      ],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 43294,
+      "root": true,
+      "rootEmpty": false,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": true,
+        "json": true,
+        "reportir": "cypress/results"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
