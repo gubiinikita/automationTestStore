@@ -1,20 +1,17 @@
 pipeline {
     agent any
 
+    tools {nodejs "NodeJS"}
     stages {
-        stage('Build') {
+        stage('Cypress run') {
             steps {
-                echo 'Building..'
+                sh 'npm run allure:clear'
+                sh 'npm run cy:run:allure'
             }
         }
-        stage('Test') {
+        stage('Allure report') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                sh 'npm run allure:generate'
             }
         }
     }
